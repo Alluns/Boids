@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Boids2D
   bounds: {x: 4, y: 4, z: 4}
-  boids: 0
+  boidsAmount: 20
 --- !u!4 &142087501
 Transform:
   m_ObjectHideFlags: 0
