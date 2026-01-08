@@ -10,6 +10,9 @@ public class Boids : MonoBehaviour
 
     public class Boid
     {
+        private Vector3 position;
+        private Vector3 rotation;
+        
         
     }
     
