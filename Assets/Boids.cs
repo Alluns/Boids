@@ -25,15 +25,15 @@ public class Boids : MonoBehaviour
         public Vector3 Position;
         public Vector3 Velocity;
         public bool IsEnabled = false;
+        public int neighbourCount = 0;
 
         public void Simulate(Boids container)
         {
-            
             Vector3 neighboursCenterOfMass = new();
             Vector3 closeNeighboursVectors = new();
             Vector3 neighboursAverageVelocity = new();
             
-            int neighbourCount = 0;
+            neighbourCount = 0;
             
             foreach (Boid boid in container.boids)
             {
@@ -122,7 +122,8 @@ public class Boids : MonoBehaviour
         {
             if (boid is not { IsEnabled: true }) break;
             
-            Gizmos.color = Color.Lerp(Color.darkGreen, Color.limeGreen, Mathf.InverseLerp(-bounds.y / 2, bounds.y / 2, boid.Position.y));
+            // Gizmos.color = Color.Lerp(Color.darkGreen, Color.limeGreen, Mathf.InverseLerp(-bounds.y / 2, bounds.y / 2, boid.Position.y));
+            Gizmos.color = Color.Lerp(Color.orangeRed, Color.dodgerBlue, Mathf.InverseLerp(0, 60, boid.neighbourCount));
             Gizmos.DrawSphere(boid.Position, 0.1f);
             
             // Gizmos.color = Color.darkOrange;
